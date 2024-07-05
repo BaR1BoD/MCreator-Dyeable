@@ -1,0 +1,15 @@
+{
+  "id": "dyeable",
+  "javaplugin": "me.barbod.dyeable.Launcher",
+  "supportedversions": [
+    202400115713,
+    202400115821,
+    2024001
+  ],
+  "info": {
+    "name": "Dyeable",
+    "version": "1.0.0",
+    "description": "A plugin that allows you to create items that can be dyed",
+    "author": "BaRiBo:D"
+  }
+}

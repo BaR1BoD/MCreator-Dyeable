@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+}
+
+group = 'me.barbod.dyeable'
+version = '1.0.0'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+String fileName = "Dyeable.zip"
+String mcreatorFolder = "C:/Program Files/Pylo/MCreator/"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation fileTree(dir: "F:/OneDrive/Desktop/Apps/Java/Mcreator/Plugin/Mcreator - 2024", include: ['*.jar'])
+}
+
+tasks.jar {
+    archiveFileName.set(fileName)
+}
+
+tasks.register('runMCreator') {
+    dependsOn jar
+
+    doLast {
+        def destination = file(mcreatorFolder + "plugins/" + fileName)
+        if (destination.exists())
+            destination.delete()
+
+        def newBuildFile = file("./build/libs/" + fileName)
+        if (newBuildFile.exists())
+            newBuildFile.renameTo(destination)
+
+        def exeFile = file(mcreatorFolder + "mcreator.exe")
+        if (exeFile.exists())
+            if (destination.exists())
+                exec {
+                    commandLine exeFile.absolutePath
+                }
+            else
+                println "Plugin file doesn't exist"
+        else
+            println "not executed"
+    }
+}
