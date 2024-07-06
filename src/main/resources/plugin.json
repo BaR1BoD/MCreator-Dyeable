@@ -10,6 +10,7 @@
     "name": "Dyeable",
     "version": "1.0.0",
     "description": "A plugin that allows you to create items that can be dyed",
-    "author": "BaRiBo:D"
+    "author": "BaRiBo:D",
+    "updateJSONURL": "https://github.com/BaR1BoD/MCreator-Dyeable/blob/main/update.json"
   }
 }
