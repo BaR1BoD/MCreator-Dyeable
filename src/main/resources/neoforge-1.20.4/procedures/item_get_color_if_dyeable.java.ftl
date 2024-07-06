@@ -1,0 +1,1 @@
+(${input$item} instanceof IDyeableItem _dyeableItem ? _dyeableItem.getColor(${input$item}) : ${input$otherwise})
